@@ -1,34 +1,58 @@
-const input = require('readline-sync');
+const input = require(`readline-sync`);
 
-// TODO 2: modify your quiz app to ask 5 questions //
+// TODO 2: modify your quiz app to ask 5 questions // 
 
 // TODO 1.1a: Define candidateName // 
-let candidateName;
+let candidateName = '';
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
-let candidateAnswer;
-let questions;
-let correctAnswers;
-let candidateAnswers;
+let question = ("Who was the first American woman in space? ");
+let correctAnswer = 'Sally Ride';
+let candidateAnswer = '';
+let questions = ["Who was the first American woman in space?","True or False: 5 kilometer == 5000 meters?","(5+3)/2*10=?","Given the array [8,'Orbit','Trajectory',45], what entry s at index 2?","What is the minimum crew size for the ISS"];
+let correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
+let candidateAnswers = [ ];
 
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-
+ candidateName = input.question('Enter your first name: ');
+ 
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-
-
+ 
+ ;
+ for (i = 0; i < questions.length;i++) {
+candidateAnswers.push(input.question(questions[i]));
 }
+ 
+} 
 
 function gradeQuiz(candidateAnswers) {
 
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
+  let space = '   '
+console.log(space)
+  let congrats = `You finished the test, Congrats!
+Now let's check your score.
+Below we listed the correct answers on the left, and yours on the right. Tally them up to get your grade.`
+
+console.log(congrats)
+console.log(space)
+for (i = 0; i < correctAnswers.length; i++) 
+ { console.log(correctAnswers[i] + ' ' + candidateAnswers[i]);}
+ 
 
 
+/* if (candidateAnswer === correctAnswer) {
+   console.log("That is correct! Great Job!");
+ }
+   else {
+     console.log("That answer is not correct. Try again!");
+   }
+ 
+*/
   let grade;
   
 
@@ -38,7 +62,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  
+  console.log('Welcome ' + candidateName + '!')
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
