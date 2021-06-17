@@ -4,6 +4,7 @@
   "description": "LaunchCode LC101 Intro to Professional Web Development Assignment",
   "main": "index.js",
   "dependencies": {
+    "e": "^0.2.0",
     "jasmine": "^3.6.3",
     "readline-sync": "^1.4.10"
   },
